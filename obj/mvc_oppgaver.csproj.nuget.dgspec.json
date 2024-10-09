@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joach\\Desktop\\mvc_oppgaver\\mvc_oppgaver.csproj": {}
+    "C:\\Users\\joach\\Desktop\\mvc_server\\mvc_oppgaver.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joach\\Desktop\\mvc_oppgaver\\mvc_oppgaver.csproj": {
+    "C:\\Users\\joach\\Desktop\\mvc_server\\mvc_oppgaver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joach\\Desktop\\mvc_oppgaver\\mvc_oppgaver.csproj",
+        "projectUniqueName": "C:\\Users\\joach\\Desktop\\mvc_server\\mvc_oppgaver.csproj",
         "projectName": "mvc_oppgaver",
-        "projectPath": "C:\\Users\\joach\\Desktop\\mvc_oppgaver\\mvc_oppgaver.csproj",
+        "projectPath": "C:\\Users\\joach\\Desktop\\mvc_server\\mvc_oppgaver.csproj",
         "packagesPath": "C:\\Users\\joach\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joach\\Desktop\\mvc_oppgaver\\obj\\",
+        "outputPath": "C:\\Users\\joach\\Desktop\\mvc_server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
