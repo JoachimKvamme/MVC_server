@@ -6,18 +6,19 @@ using Microsoft.Net.Http;
 
 public class BooksController : ControllerBase 
 {
-    private static List<Books> _books = new List<Books> {
-        new Books {Id = 1, Title = "Decline and Fall", Author = "Evelyn Waugh", Year = 1927},
-        new Books {Id = 2, Title = "Philosophical Investigations", Author = "Ludwig Wittgenstein"},
-        new Books {Id = 3, Title = "Philosophy and the Mirror of Nature", Author = "Richard Rorty"}
+    private static List<Book> _books = new List<Book> {
+
+        new Book("Decline and Fall", new Name("Evelyn", "Waugh"), "London", 1925),
+        new Book("Philosophical Investigations", new Name("Ludwig", "Wiittgenstein"), "Cambridge", 1949),
+        new Book("Philosophy and the Mirror of nature", new Name("Richard", "Rorty"), "Pittsburg", 1979)
     };
     [HttpGet]
-    public IEnumerable<Books> Get()
+    public IEnumerable<Book> Get()
     {
         return _books;
     }
     [HttpPost]
-    public IActionResult Post([FromBody] Books books)
+    public IActionResult Post([FromBody] Book books)
     {
         if (books == null)
         {
@@ -25,7 +26,7 @@ public class BooksController : ControllerBase
         }
 
         _books.Add(books);
-        return CreatedAtAction(nameof(Post), new {id = books.Id, title = books.Title, author = books.Author, year = books.Year, isbn = books.ISBN}, books);
+        return CreatedAtAction(nameof(Post), new {id = books.Id, title = books.Title, author = books.Author, year = books.Year, place = books.Place}, books);
         
     }
 }

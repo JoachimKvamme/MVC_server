@@ -1,12 +1,22 @@
+public class Name {
+    public string FirstName {get; set;}
+    public string LastName {get; set;}
+    public Name (string firstName, string lastName) {
+        FirstName = firstName;
+        LastName = lastName;
+    }
+}
+
+
 public class Book {
     static private int _id = 0;
     public int Id {set; get;}
     public string Title {get; set;}
-    public string? Author{get; set;}
+    public Name Author{get; set;}
     public int? Year {get; set;}
     public string? Place {get; set;}
 
-    public Book(string title, string author, string place, int year) {
+    public Book(string title, Name author, string place, int year) {
         Id = _id++;
         Title = title;
         Author = author;
