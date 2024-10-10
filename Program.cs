@@ -8,6 +8,8 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
+        ListController listController = new ListController();
+        ListController.AddBooks(0, new Book("Decline and Fall", new Name("Evelyn", "Waugh"), "London", 1925));
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -26,7 +28,7 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
-
+        
 
         app.MapControllers();
 
