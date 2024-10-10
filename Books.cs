@@ -27,8 +27,11 @@ public class Book {
 }
 
 public class Model {
+    static private int _id = 0;
+    public int Id {get; set;}
     public List<Book> Books {get; set;}
     public Model() {
+        Id = _id++;
         Books = new List<Book> {};
     } 
 }
