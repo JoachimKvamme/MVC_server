@@ -21,7 +21,7 @@ public class ListController : ControllerBase
         return _bookLists;
     }
 
-    [HttpGet("{id:int}")]   // GET /api/test2/xyz
+    [HttpGet("{id}")]   // GET /api/test2/xyz
     public IEnumerable<Book> GetProject(int id)
     {
     return _bookLists[id].Books;
@@ -40,11 +40,18 @@ public class ListController : ControllerBase
         
     }
 
-    [HttpPost("{id:int}")]
+    [HttpPost("{id}")]
 
-    public IActionResult POSTBook(int id, [FromBody] Book book) {
+    public IActionResult POST(int id, Book book) {
+
+        if (book == null)
+        {
+            return BadRequest("Book is null");
+        }
+        book = new Book("Philosophical Investigations", "Ludwig", "Wittgenstein", "Cambridge", 1953);
+        
         _bookLists[id].Books.Add(book);
-        return CreatedAtAction(nameof(Post), book);
+        return Ok(book);
     } 
 }
 
