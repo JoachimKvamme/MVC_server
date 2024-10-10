@@ -48,9 +48,10 @@ public class ListController : ControllerBase
         {
             return BadRequest("Book is null");
         }
+        
         book = new Book("Philosophical Investigations", "Ludwig", "Wittgenstein", "Cambridge", 1953);
         
-        _bookLists[id].Books.Add(book);
+        _bookLists[0].Books.Add(book);
         return Ok(book);
     } 
 }
