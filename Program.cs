@@ -9,7 +9,7 @@ public class Program
 
         // Add services to the container.
         ListController listController = new ListController();
-        ListController.AddBooks(0, new Book("Decline and Fall", new Name("Evelyn", "Waugh"), "London", 1925));
+        ListController.AddBooks(0, new Book("Decline and Fall", "Evelyn", "Waugh", "London", 1925));
 
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
