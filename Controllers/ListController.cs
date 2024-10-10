@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http;
 
 [ApiController]
-[Route("books")]
+[Route("booklists")]
 
 //  public class BooksController : ControllerBase 
 //  {
@@ -46,6 +46,7 @@ public class ListController : ControllerBase
     {
         return _bookLists;
     }
+
     [HttpPost]
     public IActionResult Post([FromBody] Model model)
     {
@@ -59,4 +60,6 @@ public class ListController : ControllerBase
         
     }
 }
+
+
 
