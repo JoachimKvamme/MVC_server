@@ -64,7 +64,7 @@ public class ListController : ControllerBase
 }
 
 [ApiController]
-[Route("booklists/{id:int}/{book}")]
+[Route("booklists/{id:int}")]
 
 public class BookListController : ControllerBase {
     [HttpPost]

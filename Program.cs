@@ -9,6 +9,7 @@ public class Program
 
         // Add services to the container.
         ListController listController = new ListController();
+        BookListController bookListController = new BookListController();
         ListController.AddBooks(0, new Book("Decline and Fall", "Evelyn", "Waugh", "London", 1925));
 
         builder.Services.AddControllers();
