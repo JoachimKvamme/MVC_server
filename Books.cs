@@ -29,11 +29,11 @@ public class Book {
 }
 
 public class Model {
-    static private int _id = 0;
+    static private int _idList = 0;
     public int Id {get; set;}
     public List<Book> Books {get; set;}
     public Model() {
-        Id = _id++;
+        Id = _idList++;
         Books = new List<Book> {};
     } 
 }

@@ -40,18 +40,22 @@ public class ListController : ControllerBase
         
     }
 
-    [HttpPost("{id}")]
+    [HttpPost("{id:int}")]
 
-    public IActionResult POST(int id, Book book) {
-
+    public IActionResult POST([FromBody] Book book) {
+        int i = 0;
         if (book == null)
         {
             return BadRequest("Book is null");
         }
+        else {
+            i++;
+        }
         
-        book = new Book("Philosophical Investigations", "Ludwig", "Wittgenstein", "Cambridge", 1953);
+        //book = new Book("Philosophical Investigations", "Ludwig", "Wittgenstein", "Cambridge", 1953);
         
-        _bookLists[0].Books.Add(book);
+        _bookLists[i].Books.Add(book);
+        //return CreatedAtAction(nameof(Post), new {_id = book.Id, list = book}, book);
         return Ok(book);
     } 
 }
