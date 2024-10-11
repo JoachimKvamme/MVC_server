@@ -40,24 +40,42 @@ public class ListController : ControllerBase
         
     }
 
-    [HttpPost("{id:int}")]
 
-    public IActionResult POST([FromBody] Book book) {
-        int i = 0;
-        if (book == null)
-        {
+    
+    // [HttpPost("{id}")]
+
+    // public IActionResult POST(int id, [FromBody] Book book) {
+    //     //int i = 0;
+    //     if (book == null)
+    //     {
+    //         return BadRequest("Book is null");
+    //     }
+    //     //else {
+    //       //  i++;
+    //     //}
+        
+    //     //book = new Book("Philosophical Investigations", "Ludwig", "Wittgenstein", "Cambridge", 1953);
+        
+    //     _bookLists[0].Books.Add(book);
+    //     //return CreatedAtAction(nameof(Post), new {_id = book.Id, list = book}, book);
+    //     return Ok(book);
+    // } 
+
+}
+
+[ApiController]
+[Route("booklists/{id:int}/{book}")]
+
+public class BookListController : ControllerBase {
+    [HttpPost]
+    public IActionResult POST(int id, [FromBody] Book book) {
+        if (book == null) {
             return BadRequest("Book is null");
         }
-        else {
-            i++;
-        }
-        
-        //book = new Book("Philosophical Investigations", "Ludwig", "Wittgenstein", "Cambridge", 1953);
-        
-        _bookLists[i].Books.Add(book);
-        //return CreatedAtAction(nameof(Post), new {_id = book.Id, list = book}, book);
+        ListController._bookLists[id].Books.Add(book);
         return Ok(book);
-    } 
+
+    }
 }
 
 
